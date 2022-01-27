@@ -10,11 +10,13 @@ import { HomeComponent } from './home/home.component';
 import { AutorModule } from './autor/autor.module';
 import { HomePageModule } from './home/home.module';
 import { CurriculumPageRoutingModule } from './curriculum/curriculum-routing.module';
+import { BibliotecaPageModule } from './biblioteca/biblioteca/biblioteca.module';
+import { BibliotecaserviceService } from './biblioteca/bibliotecaservice.service';
 @NgModule({
   declarations: [AppComponent,HomeComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,AutorModule,HomePageModule,CurriculumPageRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,AutorModule,HomePageModule,CurriculumPageRoutingModule,BibliotecaPageModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },BibliotecaserviceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

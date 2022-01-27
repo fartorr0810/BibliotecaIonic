@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { HomeComponent } from './home/home.component';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { BibliotecaComponent } from './biblioteca/biblioteca/biblioteca.component';
 import { AutorComponent } from './autor/autor/autor.component';
 import { CurriculumPage } from './curriculum/curriculum.page';
+import { BibliotecaPage } from './biblioteca/biblioteca/biblioteca.page';
 
 const routes: Routes = [
   {
@@ -13,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'biblioteca',
-    component:BibliotecaComponent },
+    component:BibliotecaPage },
     {
     path: 'autor',
     component:AutorComponent,children:[]
@@ -30,7 +29,7 @@ const routes: Routes = [
   {
     path: 'curriculum',
     loadChildren: () => import('./curriculum/curriculum.module').then( m => m.CurriculumPageModule)
-  },
+  }
 ];
 
 @NgModule({
