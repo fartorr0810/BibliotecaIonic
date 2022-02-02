@@ -1,8 +1,10 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AutorComponent } from './autor/autor/autor.component';
 import { CurriculumPage } from './curriculum/curriculum.page';
 import { BibliotecaPage } from './biblioteca/biblioteca/biblioteca.page';
+import { LibroespecificoPage } from './libroespecifico/libroespecifico.page';
+import { LibroespecificoPageModule } from './libroespecifico/libroespecifico.module';
 
 const routes: Routes = [
   {
@@ -20,6 +22,10 @@ const routes: Routes = [
    {
     path:'autor/curriculum',
     component: CurriculumPage
+  },
+  {
+    path:'biblioteca/libroespecifico/:isbn',
+    component:LibroespecificoPage
   },
   {
     path: '',

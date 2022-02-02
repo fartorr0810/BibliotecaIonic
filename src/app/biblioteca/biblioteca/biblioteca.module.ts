@@ -9,6 +9,7 @@ import { BibliotecaPageRoutingModule } from './biblioteca-routing.module';
 import { BibliotecaPage } from './biblioteca.page';
 import { BibliotecaserviceService } from '../bibliotecaservice.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LibroespecificoPageModule } from 'src/app/libroespecifico/libroespecifico.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     FormsModule,
     IonicModule,
     BibliotecaPageRoutingModule,
+    LibroespecificoPageModule,
     HttpClientModule
   ],
   providers:[BibliotecaserviceService],

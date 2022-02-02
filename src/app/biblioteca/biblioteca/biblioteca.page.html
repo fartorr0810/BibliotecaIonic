@@ -14,6 +14,7 @@
           <p><strong>{{ libro.title }}</strong></p>
           <p>Autor: {{libro.author_name}}</p>
           <p>Año: {{libro.first_publish_year}}</p>
+          <button [routerLink]="['./libroespecifico',libro.isbn[2]]">Ver Libro</button>
       </div>
   </ion-list>
 

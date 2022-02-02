@@ -15,4 +15,8 @@ export class BibliotecaserviceService {
   obtenerLibros(): Observable<LibroSearch>{
     return this.http.get<LibroSearch>(this.url);
   }
+  obtenerLibroIndividual(isbn:string){
+    let url =`http://openlibrary.org/search.json?isbn=${isbn}`;
+    return this.http.get<LibroSearch>(url);
+  }
 }
