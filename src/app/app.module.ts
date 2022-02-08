@@ -1,23 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
-
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
-import { AutorModule } from './autor/autor.module';
-import { HomePageModule } from './home/home.module';
-import { CurriculumPageRoutingModule } from './curriculum/curriculum-routing.module';
-import { BibliotecaPageModule } from './biblioteca/biblioteca/biblioteca.module';
-import { BibliotecaserviceService } from './biblioteca/bibliotecaservice.service';
-import { LibroespecificoPageModule } from './libroespecifico/libroespecifico.module';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
-  declarations: [AppComponent,HomeComponent],
+  declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,AutorModule,HomePageModule,CurriculumPageRoutingModule,BibliotecaPageModule,LibroespecificoPageModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },BibliotecaserviceService],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,RouterModule,
+    HttpClientModule,
+  FormsModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -3,8 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  urlApi: 'http://openlibrary.org/search.json?title=starwars&limit=10'
+  production: false
 };
 
 /*

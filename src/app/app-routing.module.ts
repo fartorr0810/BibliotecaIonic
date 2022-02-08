@@ -1,31 +1,10 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AutorComponent } from './autor/autor/autor.component';
-import { CurriculumPage } from './curriculum/curriculum.page';
-import { BibliotecaPage } from './biblioteca/biblioteca/biblioteca.page';
-import { LibroespecificoPage } from './libroespecifico/libroespecifico.page';
-import { LibroespecificoPageModule } from './libroespecifico/libroespecifico.module';
 
 const routes: Routes = [
   {
-    //Esto es lazy loading.
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: 'biblioteca',
-    component:BibliotecaPage },
-    {
-    path: 'autor',
-    component:AutorComponent,children:[]
-   },
-   {
-    path:'autor/curriculum',
-    component: CurriculumPage
-  },
-  {
-    path:'biblioteca/libroespecifico/:isbn',
-    component:LibroespecificoPage
   },
   {
     path: '',
@@ -33,9 +12,21 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'autor',
+    loadChildren: () => import('./autor/autor.module').then( m => m.AutorPageModule)
+  },
+  {
+    path: 'biblioteca',
+    loadChildren: () => import('./biblioteca/biblioteca.module').then( m => m.BibliotecaPageModule)
+  },
+  {
     path: 'curriculum',
     loadChildren: () => import('./curriculum/curriculum.module').then( m => m.CurriculumPageModule)
-  }
+  },
+  {
+    path: 'detalle',
+    loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
+  },
 ];
 
 @NgModule({

@@ -1,14 +1,14 @@
-export interface LibroSearch {
+export interface Libros {
   numFound:      number;
   start:         number;
   numFoundExact: boolean;
-  docs:          Librito[];
+  docs:          Libro[];
   num_found:     number;
   q:             string;
   offset:        null;
 }
 
-export interface Librito {
+export interface Libro {
   key:                                      string;
   type:                                     Type;
   seed:                                     string[];
@@ -96,11 +96,11 @@ export enum Type {
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-  public static toWelcome(json: string): Librito {
+  public static toWelcome(json: string): Libros {
       return cast(JSON.parse(json), r("Welcome"));
   }
 
-  public static welcomeToJson(value: Librito): string {
+  public static welcomeToJson(value: Libros): string {
       return JSON.stringify(uncast(value, r("Welcome")), null, 2);
   }
 }

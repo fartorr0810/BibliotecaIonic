@@ -1,0 +1,11 @@
+
+<ion-header>
+  <ion-toolbar>
+      <ion-title>Biblioteca</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-busqueda (onEnter)="getLibros($event)"></app-busqueda>
+  <app-tabla [librosTabla]="libros"></app-tabla>
+</ion-content>

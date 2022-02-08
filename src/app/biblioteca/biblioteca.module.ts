@@ -5,11 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { BibliotecaPageRoutingModule } from './biblioteca-routing.module';
-
+import { HttpClient } from '@angular/common/http';
 import { BibliotecaPage } from './biblioteca.page';
-import { BibliotecaserviceService } from '../bibliotecaservice.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { LibroespecificoPageModule } from 'src/app/libroespecifico/libroespecifico.module';
+import { HttpClientModule } from '@angular/common/http';
+import { BusquedaComponent } from './busqueda/busqueda.component';
+import { LibrosService } from './busqueda/services/libro.service';
 
 @NgModule({
   imports: [
@@ -17,11 +17,9 @@ import { LibroespecificoPageModule } from 'src/app/libroespecifico/libroespecifi
     FormsModule,
     IonicModule,
     BibliotecaPageRoutingModule,
-    LibroespecificoPageModule,
     HttpClientModule
   ],
-  providers:[BibliotecaserviceService],
-  declarations: [BibliotecaPage],
-  exports:[BibliotecaPage]
+  declarations: [BibliotecaPage,BusquedaComponent],
+  providers:[LibrosService]
 })
 export class BibliotecaPageModule {}

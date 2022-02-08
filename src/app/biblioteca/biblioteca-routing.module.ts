@@ -5,7 +5,7 @@ import { BibliotecaPage } from './biblioteca.page';
 
 const routes: Routes = [
   {
-    path: 'biblioteca',
+    path: '',
     component: BibliotecaPage
   }
 ];
