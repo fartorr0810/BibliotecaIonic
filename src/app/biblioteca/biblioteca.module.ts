@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { LibrosService } from './busqueda/services/libro.service';
 import { TablaComponent } from './tabla/tabla.component';
+import { BarcodeScanner, BarcodeScannerOptions } from "@ionic-native/barcode-scanner/ngx";
+
+
 
 @NgModule({
   imports: [

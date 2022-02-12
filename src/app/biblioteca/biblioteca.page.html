@@ -7,5 +7,10 @@
 
 <ion-content>
   <app-busqueda (onEnter)="getLibros($event)"></app-busqueda>
+  <ion-button (click)="scanBRcode()" expand="block">
+    Escanear codigo
+</ion-button>
   <app-tabla [librosTabla]="libros"></app-tabla>
 </ion-content>
+
+
