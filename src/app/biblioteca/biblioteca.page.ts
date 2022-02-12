@@ -5,21 +5,22 @@ import { LibrosService } from './busqueda/services/libro.service';
 @Component({
   selector: 'app-biblioteca',
   templateUrl: './biblioteca.page.html',
-  styleUrls: ['./biblioteca.page.scss'],
+  styleUrls: [],
 })
 export class BibliotecaPage implements OnInit {
 
   libros:Libro[] = [];
-  termino: string='';
+  busqueda: string='';
   constructor(private librosService:LibrosService) { }
 
   ngOnInit() {
 
   }
 
-  getLibros(termino:string){
-    this.termino=termino;
-    this.librosService.getLibros(this.termino).subscribe(datos =>{
+  getLibros(busqueda:string){
+    console.log(busqueda);
+    this.busqueda=busqueda;
+    this.librosService.getLibros(this.busqueda).subscribe(datos =>{
       this.libros = datos.docs;
     });
   }

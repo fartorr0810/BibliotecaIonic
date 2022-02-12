@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { DetallePageRoutingModule } from './detalle-routing.module';
 
 import { DetallePage } from './detalle.page';
+import { LibrosService } from '../biblioteca/busqueda/services/libro.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,8 @@ import { DetallePage } from './detalle.page';
     IonicModule,
     DetallePageRoutingModule
   ],
+  providers:[LibrosService],
+  exports:[DetallePage],
   declarations: [DetallePage]
 })
 export class DetallePageModule {}

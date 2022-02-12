@@ -5,7 +5,7 @@ import { DetallePage } from './detalle.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':isbn',
     component: DetallePage
   }
 ];
