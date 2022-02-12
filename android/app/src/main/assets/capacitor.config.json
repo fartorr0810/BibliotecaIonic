@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "LaBiblioteca",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

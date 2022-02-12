@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AutorPage implements OnInit {
   public autor = {
-    correo: "gmail@gmail.com",
-    twitter: "https://twitter.com/iesjacaranda",
-    telefono: "645810333"
+    correo: "frankarroyop@gmail.com",
+    twitter: "https://twitter.com/arrtorf",
+    telefono: "608839891"
   }
   constructor() { }
 
