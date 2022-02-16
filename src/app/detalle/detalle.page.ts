@@ -11,7 +11,7 @@ import { LibrosService } from '../biblioteca/busqueda/services/libro.service';
 export class DetallePage implements OnInit {
   libro!:Libro;
   mostrardiv:boolean=false;
-
+  favorito:boolean=false;
   constructor(private activadorruta:ActivatedRoute,private serviciolibro:LibrosService) { }
   ngOnInit() {
     this.getLibro();
@@ -21,5 +21,13 @@ export class DetallePage implements OnInit {
       this.libro = resp.docs[0];
       this.mostrardiv = true;
     });
+  }
+  anadirFavorito(){
+    if (this.favorito==true){
+      this.favorito=false;
+    }else{
+      this.favorito=true;
+    }
+
   }
 }
