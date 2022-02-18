@@ -19,6 +19,7 @@ export class DetallePage implements OnInit {
 
   async ngOnInit() {
     this.getLibro();
+    this.comprobarLibro(this.libro);
     await this.storage.create();
   }
   getLibro(){
@@ -27,13 +28,24 @@ export class DetallePage implements OnInit {
       this.mostrardiv = true;
     });
   }
+
+  comprobarLibro(libro:Libro){
+    let lalistaca:Libro[]=this.detalle.getLibrosFavoritos;
+    if (lalistaca.find(book => book.isbn[0] === libro.isbn[0])){
+
+    }
+
+  }
+
   anadirFavorito(){
     if (this.favorito==true){
       this.favorito=false;
+      let posi:number=this.detalle.getLibrosFavoritos.indexOf(this.libro);
+      console.log(posi);
+      this.detalle.deleteLibro(posi);
     }else{
       this.favorito=true;
-      this.detalle.set("prueba",this.libro)
-
+      this.detalle.set("favoritos",this.libro)
     }
 
   }
