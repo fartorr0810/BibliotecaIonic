@@ -32,7 +32,9 @@ export class DetallePage implements OnInit {
   comprobarLibro(libro:Libro){
     let lalistaca:Libro[]=this.detalle.getLibrosFavoritos;
     if (lalistaca.find(book => book.isbn[0] === libro.isbn[0])){
-
+      this.favorito=true;
+    }else{
+      this.favorito=false;
     }
 
   }

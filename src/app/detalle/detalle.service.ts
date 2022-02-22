@@ -21,6 +21,7 @@ export class DetalleService {
     this.listalibrosfavoritos.push(libro)
     this._storage?.set(key, this.listalibrosfavoritos);
   }
+
   public deleteLibro(pos:number){
     this.listalibrosfavoritos.splice(pos);
     this._storage?.set("favoritos", this.listalibrosfavoritos);
